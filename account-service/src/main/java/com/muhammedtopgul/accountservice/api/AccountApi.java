@@ -3,9 +3,10 @@ package com.muhammedtopgul.accountservice.api;
 import com.muhammedtopgul.accountservice.entity.AccountEntity;
 import com.muhammedtopgul.accountservice.service.AccountService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/account")
 @RestController
@@ -32,5 +33,10 @@ public class AccountApi {
     @DeleteMapping
     public void delete(String id) {
         accountService.delete(id);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AccountEntity>> getAll() {
+        return ResponseEntity.ok(accountService.findAll());
     }
 }
