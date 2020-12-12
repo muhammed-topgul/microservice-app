@@ -1,0 +1,13 @@
+server:
+  port: 8502
+
+# give a name to account service app to display name on the eureka server
+spring:
+  application:
+    name: ticket-service
+
+# to register account service to eureka server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
