@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: account-service # look at the account-service.yml file on config-server module
+
+  cloud:
+    config:
+      profile: native
+      uri: http://localhost:8888

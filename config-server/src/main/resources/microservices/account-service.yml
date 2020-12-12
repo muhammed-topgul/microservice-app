@@ -1,0 +1,24 @@
+server:
+  port: 8501
+
+# give a name to account service app to display name on the eureka server
+spring:
+  application:
+    name: account-service
+
+# to register account service to eureka server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+ms:
+  cassandra:
+    contact:
+      point: 127.0.0.1
+    port: 9042
+    keyspace:
+      name: springcloud
+
+    username: cassandra
+    password: cassandra
