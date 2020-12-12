@@ -6,7 +6,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -25,14 +25,23 @@ public class AccountEntity implements Serializable {
     @Column(value = "uname")
     private String username;
 
+    @Column(value = "name")
+    private String name;
+
+    @Column(value = "surname")
+    private String surname;
+
+    @Column(value = "birth_date")
+    private LocalDate birthDate;
+
     @Column(value = "email")
     private String email;
 
     @Column(value = "pwd")
     private String password;
 
-//    @Column(value = "created_at")
-//    private Date createdAt;
+    @Column(value = "created_at")
+    private LocalDate createdAt;
 
     @Column(value = "is_active")
     private Boolean isActive;

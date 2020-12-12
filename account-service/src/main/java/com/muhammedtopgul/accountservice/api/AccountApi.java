@@ -1,8 +1,11 @@
 package com.muhammedtopgul.accountservice.api;
 
+import com.muhammedtopgul.accountservice.dto.AccountDto;
 import com.muhammedtopgul.accountservice.entity.AccountEntity;
 import com.muhammedtopgul.accountservice.service.AccountService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,18 +19,18 @@ public class AccountApi {
     private final AccountService accountService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<AccountEntity> get(@PathVariable("id") String id) {
+    public ResponseEntity<AccountDto> get(@PathVariable("id") String id) {
         return ResponseEntity.ok(accountService.get(id));
     }
 
     @PostMapping
-    public ResponseEntity<AccountEntity> save(@RequestBody AccountEntity accountEntity) {
-        return ResponseEntity.ok(accountService.save(accountEntity));
+    public ResponseEntity<AccountDto> save(@RequestBody AccountDto accountDto) {
+        return ResponseEntity.ok(accountService.save(accountDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AccountEntity> update(@PathVariable("id") String id, @RequestBody AccountEntity accountEntity) {
-        return ResponseEntity.ok(accountService.update(id, accountEntity));
+    public ResponseEntity<AccountDto> update(@PathVariable("id") String id, @RequestBody AccountDto accountDto) {
+        return ResponseEntity.ok(accountService.update(id, accountDto));
     }
 
     @DeleteMapping
@@ -36,7 +39,7 @@ public class AccountApi {
     }
 
     @GetMapping
-    public ResponseEntity<List<AccountEntity>> getAll() {
-        return ResponseEntity.ok(accountService.findAll());
+    public ResponseEntity<Slice<AccountDto>> getAll(Pageable pageable) {
+        return ResponseEntity.ok(accountService.findAll(pageable));
     }
 }
