@@ -1,6 +1,6 @@
 spring:
   application:
-    name: account-service # look at the account-service.yml file on config-server module
+    name: eureka-server
 
   cloud:
     config:
