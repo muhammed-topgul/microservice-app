@@ -5,6 +5,14 @@ server:
 spring:
   application:
     name: ticket-service
+  # mysql config
+  datasource:
+    url: jdbc:mysql://localhost:3306/microserviceapp
+    username: root
+    password: microservice-app
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 # to register account service to eureka server
 eureka:
