@@ -17,4 +17,8 @@ public class AccountDto {
     private String surname;
     private LocalDate birthDate;
     private String email;
+
+    public String getNameAndSurname() {
+        return this.name + " " + this.surname;
+    }
 }

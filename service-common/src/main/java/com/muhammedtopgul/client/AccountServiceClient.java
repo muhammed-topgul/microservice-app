@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient("account-service")
+@FeignClient("account-service") // this service id equal with account service eureka registered id
 public interface AccountServiceClient {
 
     @RequestMapping("/account/{id}")
