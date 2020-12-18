@@ -1,8 +1,8 @@
 package com.muhammedtopgul.accountservice.service;
 
-import com.muhammedtopgul.accountservice.dto.AccountDto;
 import com.muhammedtopgul.accountservice.entity.AccountEntity;
 import com.muhammedtopgul.accountservice.repository.AccountRepository;
+import contract.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
