@@ -1,6 +1,6 @@
 package com.muhammedtopgul.client;
 
-import contract.dto.AccountDto;
+import com.muhammedtopgul.client.contract.dto.AccountDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

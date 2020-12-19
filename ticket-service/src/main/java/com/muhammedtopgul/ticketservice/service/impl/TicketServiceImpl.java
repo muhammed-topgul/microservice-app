@@ -10,7 +10,7 @@ import com.muhammedtopgul.ticketservice.repository.TicketRepository;
 import com.muhammedtopgul.ticketservice.repository.elasticsearch.TicketElasticRepository;
 import com.muhammedtopgul.ticketservice.service.TicketService;
 import com.muhammedtopgul.ticketservice.validation.TicketValidator;
-import contract.dto.AccountDto;
+import com.muhammedtopgul.client.contract.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
