@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>zipkin-server</artifactId>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>

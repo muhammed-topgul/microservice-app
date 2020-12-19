@@ -15,7 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>notification-service</name>
     <description>Notification Service For Spring Cloud Application</description>
-
+    <packaging>war</packaging>
     <!-- spring-cloud-stream -->
     <!-- rabbitmq settings with ticket-service -->
     <dependencies>

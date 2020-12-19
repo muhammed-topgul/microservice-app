@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>account-service</name>
     <description>Account Service For Spring Cloud Application</description>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>11</java.version>
