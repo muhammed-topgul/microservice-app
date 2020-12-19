@@ -1,0 +1,46 @@
+#https://cloud.spring.io/spring-cloud-gateway/reference/html/
+server:
+  port: 8088
+
+spring:
+  application:
+    name: api-gateway # id of this server
+
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: lb://ACCOUNT-SERVICE # search service in eureka server this uri represent eureka load balancer ACCOUNT-SERVICE
+          predicates:
+            - Path=/account/**
+          filters:
+            - RewritePath=/(?<segment>.*), /$\{segment}
+            - name: Hystrix
+              args:
+                name: account-service
+                fallbackUri: forward:/fb/account
+
+        - id: ticket-service
+          uri: lb://TICKET-SERVICE # in eureka server
+          predicates:
+            - Path=/ticket/**
+          filters:
+            - RewritePath=/(?<segment>.*), /$\{segment}
+            - name: Hystrix
+              args:
+                name: ticket-service
+                fallbackUri: forward:/fb/ticket
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
+  instance:
+    preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
