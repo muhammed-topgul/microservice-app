@@ -6,8 +6,8 @@ spring:
   application:
     name: notification-service
   rabbitmq:
-    username: muhammed
-    password: muhammed
+    username: muhammedtopgul
+    password: muhammedtopgul
   cloud:
     stream:
       binding:
