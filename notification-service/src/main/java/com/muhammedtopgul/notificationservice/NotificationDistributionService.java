@@ -8,7 +8,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 @EnableBinding(Sink.class)
 public class NotificationDistributionService {
 
-    @StreamListener
+    @StreamListener(Sink.INPUT)
     public void onNotification(TicketNotificationDto ticketNotificationDto) {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>----<<<<<<<<<<<<<<<<<<<<<<");
         System.out.println(">>> Notification taken and sending to users <<<");

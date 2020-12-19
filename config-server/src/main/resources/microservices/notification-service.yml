@@ -10,7 +10,7 @@ spring:
     password: muhammedtopgul
   cloud:
     stream:
-      binding:
+      bindings:
         input:   # this will read so, input in ticket-service.yml will write so it has output
           destination: msqueue
 
