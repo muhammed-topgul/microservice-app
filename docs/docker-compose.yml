@@ -23,3 +23,12 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - "discovery.type=single-node"
     restart: always
+
+  msrabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=muhammedtopgul
+      - RABBITMQ_DEFAULT_PASS=muhammedtopgul
