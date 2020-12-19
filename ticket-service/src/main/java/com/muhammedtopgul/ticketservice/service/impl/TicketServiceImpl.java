@@ -8,11 +8,11 @@ import com.muhammedtopgul.ticketservice.enumeration.PriorityType;
 import com.muhammedtopgul.ticketservice.enumeration.TicketStatus;
 import com.muhammedtopgul.ticketservice.repository.TicketRepository;
 import com.muhammedtopgul.ticketservice.repository.elasticsearch.TicketElasticRepository;
+import com.muhammedtopgul.ticketservice.service.TicketNotificationService;
 import com.muhammedtopgul.ticketservice.service.TicketService;
 import com.muhammedtopgul.ticketservice.validation.TicketValidator;
 import com.muhammedtopgul.client.contract.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class TicketServiceImpl implements TicketService {
 
     private final TicketRepository ticketRepository;
     private final TicketElasticRepository ticketElasticRepository;
-    private final ModelMapper modelMapper;
+    private final TicketNotificationService ticketNotificationService;
     private final AccountServiceClient accountServiceClient;
 
     @Override
@@ -77,6 +77,8 @@ public class TicketServiceImpl implements TicketService {
         // 6. return created object
         ticketDto.setId(savedTicketEntity.getId());
 
+        // 7. write notification to queue
+        ticketNotificationService.sendToQueue(savedTicketEntity);
         return ticketDto;
     }
 
