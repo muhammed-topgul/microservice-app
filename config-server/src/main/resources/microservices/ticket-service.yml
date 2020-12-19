@@ -13,6 +13,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  rabbitmq:
+    username: muhammed
+    password: muhammed
+    cloud:
+      stream:
+        binding:
+          output:   # this will write so, input in notification-service.yml will read so it has input
+            destination: msqueue
 
 # to register account service to eureka server
 eureka:

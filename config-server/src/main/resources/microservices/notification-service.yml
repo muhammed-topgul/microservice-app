@@ -1,0 +1,21 @@
+server:
+  port: 8503
+
+# give a name to notification service app to display name on the eureka server
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    username: muhammed
+    password: muhammed
+  cloud:
+    stream:
+      binding:
+        input:   # this will read so, input in ticket-service.yml will write so it has output
+          destination: msqueue
+
+# to register notification service to eureka server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
