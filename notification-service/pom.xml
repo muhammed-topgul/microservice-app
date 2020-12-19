@@ -11,69 +11,14 @@
         <relativePath>../service-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>ticket-service</artifactId>
+    <artifactId>notification-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ticket-service</name>
-    <description>Ticket Service For Spring Cloud Application</description>
+    <name>notification-service</name>
+    <description>Notification Service For Spring Cloud Application</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
+    <!-- spring-cloud-stream -->
+    <!-- rabbitmq settings with ticket-service -->
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- to register eureka server -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.4.7.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.muhammedtopgul</groupId>
-            <artifactId>service-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <!-- rabbitmq settings with notification-service -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
@@ -85,6 +30,18 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
+
+        <!-- to register eureka server -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.muhammedtopgul</groupId>
+            <artifactId>service-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -106,4 +63,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

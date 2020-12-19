@@ -1,4 +1,4 @@
-package contract.dto;
+package com.muhammedtopgul.client.contract.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

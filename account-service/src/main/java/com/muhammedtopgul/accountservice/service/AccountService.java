@@ -2,7 +2,7 @@ package com.muhammedtopgul.accountservice.service;
 
 import com.muhammedtopgul.accountservice.entity.AccountEntity;
 import com.muhammedtopgul.accountservice.repository.AccountRepository;
-import contract.dto.AccountDto;
+import com.muhammedtopgul.client.contract.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
-import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
