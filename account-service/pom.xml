@@ -57,6 +57,12 @@
             <artifactId>service-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- register account to zipkin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

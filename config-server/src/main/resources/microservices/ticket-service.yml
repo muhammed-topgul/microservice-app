@@ -21,6 +21,8 @@ spring:
       bindings:
         output:   # this will write so, input in notification-service.yml will read so it has input
           destination: msqueue
+  zipkin: # give path to ticket service to register zipkin server
+    base-url: http://localhost:9411/
 
 # to register account service to eureka server
 eureka:

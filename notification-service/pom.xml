@@ -43,6 +43,12 @@
             <artifactId>service-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- register notification to zipkin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
