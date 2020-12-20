@@ -8,6 +8,18 @@ spring:
   zipkin: # give path to account service to register zipkin server
     base-url: http://localhost:9411/
 
+  # admin server config to see detail of application details
+  boot:
+    admin:
+      client:
+        url: http://localhost:8508
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 # to register account service to eureka server
 eureka:
   client:
